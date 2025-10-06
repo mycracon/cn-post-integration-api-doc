@@ -120,8 +120,8 @@
                       },
                       "nameEN": {
                         "type": "string",
-                        "description": "Product name in English, displayed on the label.",
-                        "example": "This name is displayed on label"
+                        "description": "Product name in English",
+                        "example": "Rx medication for Personal use"
                       },
                       "price": {
                         "type": "number",
