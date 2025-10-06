@@ -1,0 +1,289 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "China Post Integration - OpenAPI 3.0",
+    "description": "This document shows how to integrate with China Post through Shipad system",
+    "termsOfService": "",
+    "contact": {
+      "email": ""
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about spec",
+    "url": ""
+  },
+  "servers": [
+    {
+      "url": "https://kz7lwnaz17.execute-api.us-east-1.amazonaws.com/prod",
+      "description": "",
+      "variables": {}
+    }
+  ],
+  "tags": [
+    {
+      "name": "orders",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/orders": {
+      "post": {
+        "summary": "Create new order and print label",
+        "description": "",
+        "operationId": "",
+        "tags": [
+          "orders"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CreateOrderResponse"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/CreateOrderPayload"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {},
+    "requestBodies": {
+      "CreateOrderPayload": {
+        "required": false,
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "description": "The main schema for placing a new order and declaration.",
+              "required": [
+                "orderNo",
+                "declareInfos",
+                "recipient",
+                "weight"
+              ],
+              "properties": {
+                "orderNo": {
+                  "type": "string",
+                  "description": "Unique identifier for the order.",
+                  "example": "TestK-001"
+                },
+                "declareInfos": {
+                  "type": "array",
+                  "description": "List of items included in the shipment for customs declaration.",
+                  "items": {
+                    "type": "object",
+                    "description": "Details for a single declared item.",
+                    "required": [
+                      "currency",
+                      "des",
+                      "hs",
+                      "nameCN",
+                      "nameEN",
+                      "price",
+                      "qty",
+                      "sku",
+                      "weight"
+                    ],
+                    "properties": {
+                      "currency": {
+                        "type": "string",
+                        "description": "The currency code for the item price (e.g., USD, EUR).",
+                        "example": "USD"
+                      },
+                      "des": {
+                        "type": "string",
+                        "description": "Detailed description of the item for customs.",
+                        "example": "Rx medication for Personal use"
+                      },
+                      "hs": {
+                        "type": "string",
+                        "description": "Harmonized System (HS) code.",
+                        "example": "3004909900"
+                      },
+                      "nameCN": {
+                        "type": "string",
+                        "description": "Product name in Chinese.",
+                        "example": "个人用药"
+                      },
+                      "nameEN": {
+                        "type": "string",
+                        "description": "Product name in English, displayed on the label.",
+                        "example": "This name is displayed on label"
+                      },
+                      "price": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Unit price of the item.",
+                        "example": 4.5
+                      },
+                      "qty": {
+                        "type": "integer",
+                        "description": "Quantity of the item.",
+                        "example": 1
+                      },
+                      "sku": {
+                        "type": "string",
+                        "description": "Stock Keeping Unit (SKU) identifier.",
+                        "example": ""
+                      },
+                      "weight": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Unit weight of the item in kilograms.",
+                        "example": 0.15
+                      },
+                      "url": {
+                        "type": "string",
+                        "description": "Product URL for verification.",
+                        "example": ""
+                      }
+                    }
+                  },
+                  "minItems": 1
+                },
+                "recipient": {
+                  "type": "object",
+                  "description": "Complete recipient and shipping address details.",
+                  "required": [
+                    "address",
+                    "city",
+                    "contact_person",
+                    "country",
+                    "country_code",
+                    "mobile_no",
+                    "province",
+                    "zip",
+                    "tel_no"
+                  ],
+                  "properties": {
+                    "act_id": {
+                      "type": "string",
+                      "description": "Account ID or internal identifier (optional).",
+                      "example": ""
+                    },
+                    "address": {
+                      "type": "string",
+                      "description": "Primary street address line.",
+                      "example": "7221 Leading Oaks St"
+                    },
+                    "address2": {
+                      "type": "string",
+                      "description": "Secondary address line (e.g., apartment, suite).",
+                      "example": ""
+                    },
+                    "address3": {
+                      "type": "string",
+                      "description": "Tertiary address line.",
+                      "example": ""
+                    },
+                    "c_name": {
+                      "type": "string",
+                      "description": "Company name of the recipient (optional).",
+                      "example": ""
+                    },
+                    "city": {
+                      "type": "string",
+                      "description": "City name.",
+                      "example": "Live Oak"
+                    },
+                    "contact_person": {
+                      "type": "string",
+                      "description": "Full name of the recipient.",
+                      "example": "Samuel Perez"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Two-letter country code (ISO 3166-1 alpha-2).",
+                      "example": "US"
+                    },
+                    "country_code": {
+                      "type": "string",
+                      "description": "Two-letter country code (ISO 3166-1 alpha-2).",
+                      "example": "US"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email",
+                      "description": "Recipient's email address.",
+                      "example": "1@email.com"
+                    },
+                    "fax_no": {
+                      "type": "string",
+                      "description": "Fax number (optional).",
+                      "example": ""
+                    },
+                    "mobile_no": {
+                      "type": "string",
+                      "description": "Recipient's mobile phone number.",
+                      "example": "210-834-9281"
+                    },
+                    "province": {
+                      "type": "string",
+                      "description": "State or Province code (e.g., TX).",
+                      "example": "TX"
+                    },
+                    "tel_no": {
+                      "type": "string",
+                      "description": "Recipient's landline phone number.",
+                      "example": "210-834-9281"
+                    },
+                    "zip": {
+                      "type": "string",
+                      "description": "Zip or Postal code.",
+                      "example": "78233-3209"
+                    }
+                  }
+                },
+                "weight": {
+                  "type": "number",
+                  "format": "float",
+                  "description": "Total gross weight of the package in kilograms.",
+                  "example": 0.25
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "CreateOrderResponse": {
+        "description": "",
+        "headers": {},
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tracking_number": {
+                  "type": "string",
+                  "description": "Tracking number of the order"
+                },
+                "label_url": {
+                  "type": "string",
+                  "description": "URL to the label"
+                },
+                "label_base64": {
+                  "type": "string",
+                  "description": "Base64 string of the label"
+                }
+              },
+              "required": [
+                "tracking_number"
+              ],
+              "description": "Label will be returned in either label_url or label_base64"
+            }
+          }
+        }
+      }
+    }
+  }
+}
