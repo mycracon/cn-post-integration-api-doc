@@ -20,7 +20,7 @@
   "servers": [
     {
       "url": "https://kz7lwnaz17.execute-api.us-east-1.amazonaws.com/prod",
-      "description": "",
+      "description": "Production endpoint",
       "variables": {}
     }
   ],
@@ -88,13 +88,11 @@
                     "description": "Details for a single declared item.",
                     "required": [
                       "currency",
-                      "des",
                       "hs",
                       "nameCN",
                       "nameEN",
                       "price",
                       "qty",
-                      "sku",
                       "weight"
                     ],
                     "properties": {
@@ -161,7 +159,6 @@
                     "address",
                     "city",
                     "contact_person",
-                    "country",
                     "country_code",
                     "mobile_no",
                     "province",
@@ -227,7 +224,7 @@
                     },
                     "mobile_no": {
                       "type": "string",
-                      "description": "Recipient's mobile phone number.",
+                      "description": "Recipient's mobile phone number (either phone number or mobile phone number can be empty)",
                       "example": "210-834-9281"
                     },
                     "province": {
@@ -237,7 +234,7 @@
                     },
                     "tel_no": {
                       "type": "string",
-                      "description": "Recipient's landline phone number.",
+                      "description": "Phone number (either phone number or mobile phone number can be empty)",
                       "example": "210-834-9281"
                     },
                     "zip": {
