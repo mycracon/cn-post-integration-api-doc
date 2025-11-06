@@ -78,7 +78,7 @@
                 "orderNo": {
                   "type": "string",
                   "description": "Unique identifier for the order.",
-                  "example": "TestK-001"
+                  "example": "TestK001"
                 },
                 "declareInfos": {
                   "type": "array",
