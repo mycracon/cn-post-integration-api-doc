@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "China Post Integration - OpenAPI 3.0",
-    "description": "This document shows how to integrate with China Post through Shipad system\r\n\r\n### Base URL\r\nhttps://kz7lwnaz17.execute-api.us-east-1.amazonaws.com/prod\r\n\r\n### Authentication\r\nPlease contact support to get Bearer access token",
+    "title": "BB Post Integration - OpenAPI 3.0",
+    "description": "This document shows how to integrate with BB Post through Shipad system\r\n\r\n### Base URL\r\nhttps://kz7lwnaz17.execute-api.us-east-1.amazonaws.com/prod\r\n\r\n### Authentication\r\nPlease contact support to get Bearer access token",
     "termsOfService": "",
     "contact": {
       "email": "kurt@shipa-e.com"
