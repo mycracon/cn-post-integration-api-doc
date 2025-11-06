@@ -251,6 +251,45 @@
                   "example": 0.25
                 }
               }
+            },
+            "examples": {
+              "example": {
+                "value": {
+                  "orderNo": "TestK001",
+                  "declareInfos": [
+                    {
+                      "currency": "USD",
+                      "des": "Rx medication for Personal use",
+                      "hs": "3004909900",
+                      "nameCN": "个人用药",
+                      "nameEN": "Rx medication for Personal use",
+                      "price": 4.5,
+                      "qty": 1,
+                      "sku": "",
+                      "weight": 0.15,
+                      "url": ""
+                    }
+                  ],
+                  "recipient": {
+                    "act_id": "",
+                    "address": "7221 Leading Oaks St",
+                    "address2": "",
+                    "address3": "",
+                    "c_name": "",
+                    "city": "Live Oak",
+                    "contact_person": "Samuel Perez",
+                    "country": "US",
+                    "country_code": "US",
+                    "email": "1@email.com",
+                    "fax_no": "",
+                    "mobile_no": "210-834-9281",
+                    "province": "TX",
+                    "tel_no": "210-834-9281",
+                    "zip": "78233-3209"
+                  },
+                  "weight": 0.25
+                }
+              }
             }
           }
         }
@@ -282,6 +321,15 @@
                 "tracking_number"
               ],
               "description": "Label will be returned in either label_url or label_base64"
+            },
+            "examples": {
+              "example": {
+                "value": {
+                  "tracking_number": "9214490374017135619391",
+                  "label_url": null,
+                  "label_base64": "base64 string"
+                }
+              }
             }
           }
         }
